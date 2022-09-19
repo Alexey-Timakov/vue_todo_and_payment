@@ -1,10 +1,30 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/users">Users</router-link>
+    <router-link to="/payments">Payments</router-link>
   </div>
   <router-view />
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      isModalWindowOpen: false,
+    };
+  },
+
+  methods: {
+    showModal() {
+      this.isModalWindowOpen = true;
+    },
+
+    closeModal() {
+      this.isModalWindowOpen = false;
+    },
+  },
+};
+</script>
 
 <style>
 #app {
@@ -22,6 +42,7 @@
 #nav a {
   font-weight: bold;
   color: #2c3e50;
+  margin: 10px 20px;
 }
 
 #nav a.router-link-exact-active {
